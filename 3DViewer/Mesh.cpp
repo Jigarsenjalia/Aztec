@@ -2,6 +2,11 @@
 #include <iostream>
 #include <cassert>
 
+/**
+ * Constructor.
+ *
+ * Initializes all variables to 0.
+ */
 Mesh::Mesh() {
 	vcount = 0;
 	ecount = 0;
@@ -10,6 +15,9 @@ Mesh::Mesh() {
 	mname=0;
 }
 
+/**
+ * Destructor.
+ */
 Mesh::~Mesh() {
 	while (vertices.size() != 0)
 		vertices.pop_back();
@@ -19,29 +27,63 @@ Mesh::~Mesh() {
 		faces.pop_back();
 }
 
+/**
+ * Indicates whether the mesh's structure has changed.
+ *
+ * @return
+ *  true if the mesh's structure has changed, false otherwise.
+ */
 bool Mesh::isChanged(){
 	return changed;
 }
 
+/**
+ * Tells the mesh that the client has processed previous changes.
+ */
 void Mesh::changedFinished(){
 	changed=false;
 }
 
+/**
+ * Adds a vertex to the mesh's list of vertices.
+ *
+ * @param v - 
+ *  the vertex to be added to the mesh
+ */
 void Mesh::addV(Vertex* v) {
 	vertices.push_back(v);
 	vcount++;
 }
 
+/**
+ * Adds a half edge to the mesh's list of half edges.
+ *
+ * @param he - 
+ *  the half edge to be added to the mesh
+ */
 void Mesh::addHE(HalfEdge* he) {
 	if (he){ edges.push_back(he);
 	ecount++;
-	}}
+	}
+}
 
+/**
+ * Adds a face to the mesh's list of faces.
+ *
+ * @param f - 
+ *  the face to be added to the mesh
+ */
 void Mesh::addF(Face* f) {
 	faces.push_back(f);
 	fcount++;
 }
 
+/**
+ * Removes a vertex from the mesh's list of vertices.
+ *
+ * @param t - 
+ *  the num of the vertex to be deleted
+ */
 void Mesh::deleteV(int t) {
 	for(int i=0; i<vertices.size(); i++)
 		if (vertices[i]->id == t) {
@@ -50,6 +92,12 @@ void Mesh::deleteV(int t) {
 		}
 }
 
+/**
+ * Removes a half edge from the mesh's list of half edges.
+ *
+ * @param t - 
+ *  the num of the vertex to be deleted
+ */
 void Mesh::deleteHE(int t) {
 	for(int i=0; i<edges.size(); i++)
 		if (edges[i]->id == t) {
@@ -58,6 +106,12 @@ void Mesh::deleteHE(int t) {
 		}
 }
 
+/**
+ * Removes a face from the mesh's list of faces.
+ *
+ * @param t - 
+ *  the num of the vertex to be deleted
+ */
 void Mesh::deleteF(int t) {
 	for(int i=0; i<faces.size(); i++)
 		if (faces[i]->id == t) {
@@ -66,28 +120,73 @@ void Mesh::deleteF(int t) {
 		}
 }
 
+/**
+ * Return the number of vertices in the mesh
+ *
+ * @return
+ *  The number of vertices in the mesh
+ */
 int Mesh::getVSize() {
 	return vertices.size();
 }
 
+/**
+ * Return the number of half edges in the mesh
+ *
+ * @return
+ *  The number of half edges in the mesh
+ */
 int Mesh::getHESize() {
 	return edges.size();
 }
 
+/**
+ * Return the number of faces in the mesh
+ *
+ * @return
+ *  The number of faces in the mesh
+ */
 int Mesh::getFSize() {
 	return faces.size();
 }
 
+/**
+ * Gets a vertex from the mesh
+ *
+ * @param i - 
+ *  The integer identifier for a vertex.
+ *
+ * @return
+ *  The vertex with that identifier
+ */
 Vertex* Mesh::getV(int i) {
 	assert(i<vertices.size());
 	return vertices[i];
 }
 
+/**
+ * Gets a half edge from the mesh
+ *
+ * @param i - 
+ *  The integer identifier for a half edge.
+ *
+ * @return
+ *  The half edge with that identifier
+ */
 HalfEdge* Mesh::getHE(int i) {
 	assert(i<edges.size());
 	return edges[i];
 }
 
+/**
+ * Gets a face from the mesh
+ *
+ * @param i - 
+ *  The integer identifier for a face.
+ *
+ * @return
+ *  The face with that identifier
+ */
 Face* Mesh::getF(int i) {
 	assert(i<faces.size());
 	return faces[i];
@@ -114,6 +213,15 @@ Face* Mesh::findF(int i) {
 	return 0;
 }
 
+/**
+ * Adds a vertex into an edge.
+ *
+ * @param he0 - 
+ *  the half edge whose next will have the next vertex inserted into it
+ *
+ * @return
+ *  the inserted vertex
+ */
 Vertex* Mesh::addVertex(HalfEdge* he0) {
 	HalfEdge* he1 = he0->next;
 	if (!he1->sym)
@@ -148,6 +256,18 @@ Vertex* Mesh::addVertex(HalfEdge* he0) {
 	return vn;
 }
 
+/**
+ * Inserts an edge between two faces.  The faces must share exactly 1 vertex.
+ *
+ * @param fa, fb - 
+ *  the faces between which the new half edge will be inserted
+ *
+ * @param hea0, heb0 - 
+ *  the half edges determine where on the faces the new half edge will be inserted
+ *
+ * @return
+ *  An error message if the method fails. The empty string otherwise.
+ */
 char* Mesh::addEdge(Face* fa, Face* fb, HalfEdge* hea0, HalfEdge* heb0) {
 	if (hea0->f != fa || heb0->f != fb) {
 		cout<<"Error in addEdge: Selected edge(s) don't belong to selected face(s)\n";
@@ -186,6 +306,15 @@ char* Mesh::addEdge(Face* fa, Face* fb, HalfEdge* hea0, HalfEdge* heb0) {
 	}
 }
 
+/**
+ * Splits a quad into two triangles. Fails if the face is not a quad.
+ *
+ * @param f1 - 
+ *  the face to be split
+ *
+ * @return
+ *  An error message if the method fails. The empty string otherwise.
+ */
 char* Mesh::splitQuad(Face* f1) {
 	if (f1->he->next->next->next->next != f1->he) {
 		cout<<"Error in splitQuad\n";
@@ -217,6 +346,12 @@ char* Mesh::splitQuad(Face* f1) {
 	}
 }
 
+/**
+ * Deletes a vertex from the mesh's structure.
+ *
+ * @param he0 - 
+ *  the half edge that points to the vertex to be deleted
+ */
 void Mesh::deleteVertex(HalfEdge* he0) {
 	Vertex* v0 = he0->v;
 	HalfEdge* he1 = he0->next->sym;
@@ -288,6 +423,15 @@ void Mesh::deleteVertex(HalfEdge* he0) {
 	order();
 }
 
+/**
+ * Splits a generic polygon.
+ *
+ * @param f1 - 
+ *  the face to be split
+ *
+ * @param he1 - 
+ *  TODO
+ */
 void Mesh::splitPolygon(Face* f1, HalfEdge* he1) {
 	HalfEdge* he0 = f1->he;
 	Face* f2 = new Face(f1->color,fcount);
@@ -316,7 +460,15 @@ void Mesh::splitPolygon(Face* f1, HalfEdge* he1) {
 	order();
 }
 
-//Average n vertices
+/**
+ * Averages a list of vertices into one vertex
+ *
+ * @param verts - 
+ *  the list of vertices to be averaged
+ *
+ * @return
+ *  a vertex whose coordinates are the average of the vertices in the list
+ */
 Vertex Mesh::average(vector<Vertex> verts){
 	float x=0;
 	float y=0;
@@ -336,7 +488,9 @@ Vertex Mesh::average(vector<Vertex> verts){
 	return Vertex(x,y,z);
 }
 
-//Catmull-Clark subdivision algorithm
+/**
+ * Smooths a mesh through the Catmull-Clark subdivision algorithm
+ */
 void Mesh::subdivide(){
 	changed = true;
 	int numFaces=faces.size();
@@ -395,7 +549,12 @@ void Mesh::subdivide(){
 	order();
 }
 
-//Add edge points from Catmull-Clark
+/**
+ * Helper method for subdivide that adds a midpoint between each edge of a face
+ *
+ * @param f - 
+ *  the face to add the midpoints to
+ */
 void Mesh::addEdgePoints(Face* f){
 	HalfEdge* current = f->he;	
 	HalfEdge* nextHE;
@@ -450,7 +609,12 @@ void Mesh::addEdgePoints(Face* f){
 	}while(current!=f->he);
 }
 
-//Add face point from Catmull-Clark
+/**
+ * Helper method for subdivide that adds a centroid to each face
+ *
+ * @param f - 
+ *  the face to add the centroid to
+ */
 void Mesh::addFacePoint(Face* face, HalfEdge* start, int pos){
 	if (!(start->v->isOrig)) start=start->next;
 	HalfEdge* current = start;
@@ -577,7 +741,12 @@ void Mesh::moveOrigPoints(vector<HalfEdge*> ed){
 	//}
 }
 
-//Move original points from Catmull-Clark
+/**
+ * Helper method for subdivide that moves the original points of a mesh
+ *
+ * @param numPoints - 
+ *  the maximum number of points to move
+ */
 void Mesh::moveOrigPoints(int numPoints){
 	int moved = 0;
 	HalfEdge* current;
@@ -747,6 +916,12 @@ void Mesh::makeExtrusion(Face* f){
 	order();
 }
 
+/**
+ * Extrudes a face.
+ *
+ * @param f - 
+ *  the face to extrude
+ */
 void Mesh::extrude(Face* f){
 	changed=true;
 	HalfEdge* current = f->he;
@@ -835,6 +1010,15 @@ void Mesh::extrude(Face* f){
 	order();
 }
 
+/**
+ * Inserts an edge loop. Will only succeed if it does not encounter any triangles
+ *
+ * @param current - 
+ *  the edge to start the edge loop at
+ *
+ * @return
+ *  true if the method can be completed, false otherwise
+ */
 bool Mesh::insertEdgeLoop(HalfEdge* current){
 	if (!checkForEdgeLoop(current)) return false;
 	changed = true;
@@ -903,6 +1087,15 @@ bool Mesh::insertEdgeLoop(HalfEdge* current){
 	return true;
 }
 
+/**
+ * Helper for edgeLoop that checks that every face that would have a loop inserted into them is a quad
+ *
+ * @param current - 
+ *  the edge at which to start checking
+ *
+ * @return
+ *  true if the face is a quad, false otherwise
+ */
 bool Mesh::checkForEdgeLoop(HalfEdge* current){
 	current = current->next;
 	HalfEdge* original = current;
@@ -922,6 +1115,15 @@ void Mesh::poke(Face* f){
 	
 }
 
+/**
+ * Translates a face
+ *
+ * @param f - 
+ *  the face to be translated
+ *
+ * @param dir - 
+ *  the direction to translate
+ */
 void Mesh::translate(Face* f, glm::vec3 dir){
 	HalfEdge* current = f->he;
 
@@ -935,7 +1137,15 @@ void Mesh::translate(Face* f, glm::vec3 dir){
 	}while(current != f->he);
 }
 
-void Mesh::scale(Face *f, float factor){
+/**
+ * Scales a face
+ *
+ * @param f - 
+ *  the face to be scaled
+ *
+ * @param factor - 
+ *  the amount to scale
+ */void Mesh::scale(Face *f, float factor){
 	HalfEdge* current = f->he;
 
 	do{
@@ -948,6 +1158,9 @@ void Mesh::scale(Face *f, float factor){
 	}while(current != f->he);
 }
 
+/**
+ * Orders the mesh's vertices, faces, and half edges
+ */
 void Mesh::order() {
 	for (int i=0; i<faces.size(); i++)
 		faces[i]->num = i;
@@ -957,6 +1170,9 @@ void Mesh::order() {
 		vertices[i]->num = i;
 }
 
+/**
+ * Set the previous pointer of the mesh
+ */
 void Mesh::setPrev(){
 	for (int i=0; i<faces.size(); i++){
 		Face* f = faces[i];
@@ -972,6 +1188,9 @@ void Mesh::setPrev(){
 	}
 }
 
+/**
+ * Checks the structure of the mesh, printing any errors
+ */
 void Mesh::checkStructure(){
 		for (int i=0; i<faces.size(); i++){
 		Face* ff = faces[i];
