@@ -11,21 +11,28 @@ class Vertex;
 class HalfEdge {
 
 public:
-	Face* f;
-	Vertex* v;
+    //Constructors////////////////////////////
+    HalfEdge(Vertex*);
+	HalfEdge(Vertex*, const int);
+	HalfEdge(const int);
+    //////////////////////////////////////////
+    
+    //Destructor
+	~HalfEdge(void);
+    
+    //Instance fields
+	Face* f;    //The face that contains this half edge
+	Vertex* v;  //The vertex that this half edge points to
 	int id;
-	int num;
+	int num;    //Unique identifier
 	HalfEdge* next;
 	HalfEdge* sym;
 	HalfEdge* prev;
-	HalfEdge(Vertex*);
-	HalfEdge(Vertex*, const int);
-	HalfEdge(const int);
-	~HalfEdge(void);
-	bool subdivided;
+	bool subdivided;    //For subdivision - lets the algorithm know that this edge has been subdivided
 	bool drawn;
-	Vertex* pV;
-	int sharpness;
+	Vertex* pV;         //Previous vertex
+	int sharpness;      //Sharpness for subdivision
+    //////////////////////////////////////////
 
 };
 #endif
