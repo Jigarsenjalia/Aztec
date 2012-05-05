@@ -1,0 +1,2242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>My3DViewerClass</class>
+ <widget class="QMainWindow" name="My3DViewerClass">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1467</width>
+    <height>876</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Mini Maya</string>
+  </property>
+  <property name="windowOpacity">
+   <double>100.000000000000000</double>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	background-color:rgb(143, 139, 123)
+}
+
+ QPushButton {
+ background-color: rgb(193, 188, 121);
+border-radius: 2px;
+}
+
+ QPushButton:hover {
+border: 2px solid rgb(103, 99, 67);
+}</string>
+   </property>
+   <widget class="MyGLWidget" name="mainWindowClass" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>1031</width>
+      <height>831</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMenuBar{
+	background-color:rgb(143, 139, 123)
+}</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>1070</x>
+      <y>80</y>
+      <width>301</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::East</enum>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::ElideNone</enum>
+    </property>
+    <widget class="QWidget" name="GDEditor">
+     <attribute name="title">
+      <string>Deform</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_15">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>450</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bend</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>150</y>
+        <width>51</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>X</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>390</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bend max</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton_3">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>150</y>
+        <width>61</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Z</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="horizontalSlider_9">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>390</y>
+        <width>81</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QSlider" name="horizontalSlider_7">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>330</y>
+        <width>81</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>360</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bend center</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>220</y>
+        <width>76</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="text">
+       <string>Twist</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>330</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Bend min</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_14">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>290</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Taper</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="horizontalSlider_8">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>360</y>
+        <width>81</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="MyDoubleSpinBox" name="doubleSpinBox">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>190</y>
+        <width>62</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Value between 0 and 20</string>
+      </property>
+      <property name="maximum">
+       <double>20.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioButton_2">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>150</y>
+        <width>61</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Y</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>420</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Curvature</string>
+      </property>
+     </widget>
+     <widget class="MyDoubleSpinBox" name="doubleSpinBox_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>420</y>
+        <width>62</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Value between 0.01 and 1</string>
+      </property>
+      <property name="maximum">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="MyDoubleSpinBox" name="doubleSpinBox_3">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>260</y>
+        <width>62</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Value between 0.01 and 3</string>
+      </property>
+      <property name="maximum">
+       <double>3.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>130</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Global Deformation Axis</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Twist Rate</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>260</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Taper Rate</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_21">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>490</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Deform</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>40</y>
+        <width>61</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Y Axis</string>
+      </property>
+     </widget>
+     <widget class="MySpinBox" name="spinBox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>42</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>2</number>
+      </property>
+      <property name="maximum">
+       <number>5</number>
+      </property>
+     </widget>
+     <widget class="MySpinBox" name="spinBox_2">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>60</y>
+        <width>42</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>2</number>
+      </property>
+      <property name="maximum">
+       <number>5</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>40</y>
+        <width>51</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Z Axis</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>90</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>FFD</string>
+      </property>
+     </widget>
+     <widget class="MySpinBox" name="spinBox_3">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>60</y>
+        <width>42</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>2</number>
+      </property>
+      <property name="maximum">
+       <number>5</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Number of Control Points</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>X Axis</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Camera</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_16">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>370</y>
+        <width>120</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reset Camera</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Light Position</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinBox_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>41</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-10</number>
+      </property>
+      <property name="maximum">
+       <number>10</number>
+      </property>
+      <property name="value">
+       <number>5</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinBox_8">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>50</y>
+        <width>41</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-10</number>
+      </property>
+      <property name="maximum">
+       <number>10</number>
+      </property>
+      <property name="value">
+       <number>5</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinBox_9">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>50</y>
+        <width>41</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-10</number>
+      </property>
+      <property name="maximum">
+       <number>10</number>
+      </property>
+      <property name="value">
+       <number>5</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>User Defined Camera</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinBox_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>41</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-90</number>
+      </property>
+      <property name="maximum">
+       <number>90</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinBox_11">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>140</y>
+        <width>41</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-90</number>
+      </property>
+      <property name="maximum">
+       <number>90</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinBox_12">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>140</y>
+        <width>41</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-10</number>
+      </property>
+      <property name="maximum">
+       <number>10</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_20">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>180</y>
+        <width>81</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Create</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>171</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>171</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>250</y>
+        <width>100</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Wireframe</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/StarterCode/Images/wireframe.png</normaloff>:/StarterCode/Images/wireframe.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>50</width>
+        <height>50</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>300</y>
+        <width>100</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Solid</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/StarterCode/Images/solid.jpg</normaloff>:/StarterCode/Images/solid.jpg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>50</width>
+        <height>50</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>410</y>
+        <width>211</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Zoom: Alt + Right Mouse
+Pan: Alt + Middle Mouse
+Rotate: Alt + Left Mouse</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Materials</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mesh Color</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="horizontalSlider">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>160</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="value">
+       <number>20</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ambient</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>210</y>
+        <width>171</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Transparency</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="horizontalSlider_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>230</y>
+        <width>160</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>99</number>
+      </property>
+      <property name="value">
+       <number>99</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>260</y>
+        <width>211</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cosine Power</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>280</y>
+        <width>62</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <double>1.000000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>100.000000000000000</double>
+      </property>
+      <property name="value">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QSlider" name="horizontalSlider_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>160</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>255</number>
+      </property>
+      <property name="value">
+       <number>255</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Specular</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>760</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>650</y>
+      <width>112</width>
+      <height>95</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QRadioButton" name="radioButton_4">
+       <property name="text">
+        <string>Scale</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton_5">
+       <property name="text">
+        <string>Move</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton_6">
+       <property name="text">
+        <string>Edge Loop</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>10</y>
+      <width>221</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Right click on the window
+ for further operations</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1467</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QMenu" name="File">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave_OBJ_File"/>
+    <addaction name="actionLoad_OBJ_File"/>
+    <addaction name="separator"/>
+    <addaction name="actionLoad_Shader"/>
+    <addaction name="actionLoad_Vert_Shader"/>
+    <addaction name="separator"/>
+    <addaction name="actionLoad_Material"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuCamera">
+    <property name="title">
+     <string>Camera</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionPerspective"/>
+    <addaction name="actionOverhead"/>
+    <addaction name="actionLeft"/>
+    <addaction name="actionRight"/>
+    <addaction name="actionFront"/>
+    <addaction name="actionBack"/>
+    <addaction name="actionUser_Defined"/>
+   </widget>
+   <addaction name="File"/>
+   <addaction name="menuCamera"/>
+  </widget>
+  <action name="actionSave_OBJ_File">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Images/Resources/Save.png</normaloff>:/Images/Resources/Save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save OBJ File</string>
+   </property>
+  </action>
+  <action name="actionLoad_Shader">
+   <property name="text">
+    <string>Load Frag Shader</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="softKeyRole">
+    <enum>QAction::NoSoftKey</enum>
+   </property>
+  </action>
+  <action name="actionLoad_OBJ_File">
+   <property name="text">
+    <string>Load OBJ File</string>
+   </property>
+  </action>
+  <action name="actionCube">
+   <property name="text">
+    <string>Cube</string>
+   </property>
+  </action>
+  <action name="actionSphere">
+   <property name="text">
+    <string>Sphere</string>
+   </property>
+  </action>
+  <action name="actionSmooth">
+   <property name="text">
+    <string>Smooth</string>
+   </property>
+  </action>
+  <action name="actionPerspective">
+   <property name="text">
+    <string>Perspective</string>
+   </property>
+  </action>
+  <action name="actionOverhead">
+   <property name="text">
+    <string>Overhead</string>
+   </property>
+  </action>
+  <action name="actionLeft">
+   <property name="text">
+    <string>Left</string>
+   </property>
+  </action>
+  <action name="actionRight">
+   <property name="text">
+    <string>Right</string>
+   </property>
+  </action>
+  <action name="actionUser_Defined">
+   <property name="text">
+    <string>User Defined</string>
+   </property>
+  </action>
+  <action name="actionFront">
+   <property name="text">
+    <string>Front</string>
+   </property>
+  </action>
+  <action name="actionBack">
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </action>
+  <action name="actionLoad_Vert_Shader">
+   <property name="text">
+    <string>Load Vert Shader</string>
+   </property>
+  </action>
+  <action name="actionLoad_Material">
+   <property name="text">
+    <string>Load Material</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MyGLWidget</class>
+   <extends>QWidget</extends>
+   <header>myglwidget.h</header>
+   <container>1</container>
+   <slots>
+    <signal>paintedScreen()</signal>
+    <signal>sendMeshInfo(Mesh*)</signal>
+    <signal>edgeAdded()</signal>
+    <signal>quadSplitted()</signal>
+    <signal>pickFace(int)</signal>
+    <signal>px(int)</signal>
+    <signal>py(int)</signal>
+    <signal>pz(int)</signal>
+    <signal>sendMode(modeType)</signal>
+    <signal>rightClickSignal(float,float,modeType)</signal>
+    <signal>rightReleaseSignal()</signal>
+    <signal>initSignal(MyGLWidget*)</signal>
+    <signal>zoomSignal()</signal>
+    <signal>resetCursor()</signal>
+    <signal>rotateSignal()</signal>
+    <signal>untoggle(bool)</signal>
+    <slot>loadObj(char*)</slot>
+    <slot>spinAround(int)</slot>
+    <slot>smooth()</slot>
+    <slot>freeFormDeform()</slot>
+    <slot>start()</slot>
+    <slot>pause()</slot>
+    <slot>stop()</slot>
+    <slot>updateScene()</slot>
+    <slot>reset()</slot>
+    <slot>addEdge(int,int,int,int)</slot>
+    <slot>vertexDeleted()</slot>
+    <slot>toggleDrawP()</slot>
+    <slot>setL(int)</slot>
+    <slot>setM(int)</slot>
+    <slot>setN(int)</slot>
+    <slot>setPX(int)</slot>
+    <slot>setPY(int)</slot>
+    <slot>setPZ(int)</slot>
+    <slot>movePX(int)</slot>
+    <slot>movePY(int)</slot>
+    <slot>movePZ(int)</slot>
+    <slot>testSlot()</slot>
+    <slot>enterWireframeMode()</slot>
+    <slot>enterSolidMode()</slot>
+    <slot>extrude()</slot>
+    <slot>extrude2()</slot>
+    <slot>edgeLoop()</slot>
+    <slot>enterLoopMode()</slot>
+    <slot>enterScaleMode()</slot>
+    <slot>enterRotateMode()</slot>
+    <slot>enterMoveMode()</slot>
+    <slot>setTwrate(double)</slot>
+    <slot>twist()</slot>
+    <slot>setDX()</slot>
+    <slot>setDY()</slot>
+    <slot>setDZ()</slot>
+    <slot>taper()</slot>
+    <slot>setTarate(double)</slot>
+    <slot>setBmin(int)</slot>
+    <slot>setBcen(int)</slot>
+    <slot>setBmax(int)</slot>
+    <slot>setCurv(double)</slot>
+    <slot>bend()</slot>
+    <slot>setLightX(int)</slot>
+    <slot>setLightY(int)</slot>
+    <slot>setLightZ(int)</slot>
+    <slot>setCamPersp()</slot>
+    <slot>setCamLeft()</slot>
+    <slot>setCamRight()</slot>
+    <slot>setCamBack()</slot>
+    <slot>setCamFront()</slot>
+    <slot>setCamOverhead()</slot>
+    <slot>snapToFace()</slot>
+    <slot>snapToVertex()</slot>
+    <slot>resetCamera()</slot>
+    <slot>loadVertShader(char*)</slot>
+    <slot>loadFragShader(char*)</slot>
+    <slot>readMaterial(char*)</slot>
+    <slot>incSharpness()</slot>
+    <slot>decSharpness()</slot>
+    <slot>setCamUserX(int)</slot>
+    <slot>setCamUserY(int)</slot>
+    <slot>setCamUserZ(int)</slot>
+    <slot>createUser()</slot>
+    <slot>setCamUser()</slot>
+    <slot>deform()</slot>
+    <slot>snapToEdge()</slot>
+    <slot>saveObj(char*)</slot>
+    <slot>setAmbient(int)</slot>
+    <slot>setTransparency(int)</slot>
+    <slot>setCosPower(double)</slot>
+    <slot>setColor(int,int,int)</slot>
+    <slot>setSpecCol(int)</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>MySpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>myspinbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyDoubleSpinBox</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>mydoublespinbox.h</header>
+   <slots>
+    <slot>reset0()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="startercode.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionLoad_OBJ_File</sender>
+   <signal>triggered()</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>startLoader()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>622</x>
+     <y>512</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>483</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mainWindowClass</sender>
+   <signal>initSignal(MyGLWidget*)</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>setAztec(MyGLWidget*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>813</x>
+     <y>412</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>993</x>
+     <y>847</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mainWindowClass</sender>
+   <signal>rightClickSignal(float,float,modeType)</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>displayModeButtons(float,float,modeType)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>707</x>
+     <y>365</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>644</x>
+     <y>821</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mainWindowClass</sender>
+   <signal>rightReleaseSignal()</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>hideDisplayButtons()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>645</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>803</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>My3DViewerClass</sender>
+   <signal>objFileName(char*)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>loadObj(char*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>459</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>471</x>
+     <y>125</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mainWindowClass</sender>
+   <signal>zoomSignal()</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>setZoomCursor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>295</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mainWindowClass</sender>
+   <signal>resetCursor()</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>resetCursor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>173</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>70</x>
+     <y>289</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mainWindowClass</sender>
+   <signal>rotateSignal()</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>setRotateCursor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>215</x>
+     <y>463</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>77</x>
+     <y>432</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_7</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1204</x>
+     <y>683</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>663</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOverhead</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCamOverhead()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPerspective</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCamPersp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFront</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCamFront()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLeft</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCamLeft()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBack</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCamBack()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRight</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCamRight()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLoad_Shader</sender>
+   <signal>triggered()</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>fragLoader()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>719</x>
+     <y>437</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLoad_Vert_Shader</sender>
+   <signal>triggered()</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>vertLoader()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>719</x>
+     <y>437</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLoad_Material</sender>
+   <signal>triggered()</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>mtlLoader()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>719</x>
+     <y>437</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>My3DViewerClass</sender>
+   <signal>fragFileName(char*)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>loadFragShader(char*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>719</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>My3DViewerClass</sender>
+   <signal>vertFileName(char*)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>loadVertShader(char*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>719</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>My3DViewerClass</sender>
+   <signal>materialFileName(char*)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>readMaterial(char*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>719</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionUser_Defined</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCamUser()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>505</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave_OBJ_File</sender>
+   <signal>triggered()</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>startSave()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>656</x>
+     <y>437</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>My3DViewerClass</sender>
+   <signal>objSaveName(char*)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>saveObj(char*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>656</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>505</x>
+     <y>431</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>enterMoveMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1229</x>
+     <y>757</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>674</x>
+     <y>391</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>enterScaleMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1229</x>
+     <y>731</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>527</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>enterLoopMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1229</x>
+     <y>783</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>894</x>
+     <y>428</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>enterWireframeMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1122</x>
+     <y>413</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>192</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>enterSolidMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1122</x>
+     <y>463</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>197</x>
+     <y>241</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setTwrate(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1243</x>
+     <y>293</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>twist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1206</x>
+     <y>323</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setDX()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1142</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_14</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>taper()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1206</x>
+     <y>393</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>908</x>
+     <y>325</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setDZ()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1232</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>218</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setDY()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1192</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_3</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setTarate(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1243</x>
+     <y>363</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>311</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_7</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setBmin(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1232</x>
+     <y>433</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>404</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_8</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setBcen(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1232</x>
+     <y>463</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_9</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setBmax(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1232</x>
+     <y>493</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>464</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_2</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCurv(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1215</x>
+     <y>523</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>492</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_15</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>bend()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1206</x>
+     <y>553</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>536</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_7</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setLightX(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1122</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_8</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setLightY(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1182</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>236</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_9</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setLightZ(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1242</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_16</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>resetCamera()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1224</x>
+     <y>553</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>920</x>
+     <y>577</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_10</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCamUserX(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1091</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>837</x>
+     <y>244</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_11</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCamUserY(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1167</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>820</x>
+     <y>286</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_12</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCamUserZ(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1220</x>
+     <y>258</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>863</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_20</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>createUser()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1146</x>
+     <y>295</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>792</x>
+     <y>401</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_21</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>deform()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1156</x>
+     <y>593</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>879</x>
+     <y>561</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setL(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1097</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>972</x>
+     <y>121</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setM(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1163</x>
+     <y>173</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>993</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setN(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1241</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1011</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>freeFormDeform()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1133</x>
+     <y>201</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1030</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>My3DViewerClass</receiver>
+   <slot>openColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1171</x>
+     <y>165</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1141</x>
+     <y>56</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>My3DViewerClass</sender>
+   <signal>toWidgetCol(int,int,int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setColor(int,int,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1111</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1030</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>My3DViewerClass</sender>
+   <signal>toWidgetCol(int,int,int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setColor(int,int,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1057</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1016</x>
+     <y>63</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setTransparency(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1130</x>
+     <y>339</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1042</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setAmbient(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1146</x>
+     <y>277</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>987</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_4</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setCosPower(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1112</x>
+     <y>396</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>982</x>
+     <y>356</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>setSpecCol(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1107</x>
+     <y>217</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>988</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>objFileName(char*)</signal>
+  <signal>shaderFileName(char*)</signal>
+  <signal>fragFileName(char*)</signal>
+  <signal>vertFileName(char*)</signal>
+  <signal>materialFileName(char*)</signal>
+  <signal>objSaveName(char*)</signal>
+  <signal>toWidgetR(int)</signal>
+  <signal>toWidgetB(int)</signal>
+  <signal>toWidgetG(int)</signal>
+  <signal>toWidgetCol(int,int,int)</signal>
+  <slot>startLoader()</slot>
+  <slot>setAztec(MyGLWidget*)</slot>
+  <slot>displayModeButtons(float,float,modeType)</slot>
+  <slot>hideDisplayButtons()</slot>
+  <slot>setMode(modeType)</slot>
+  <slot>setZoomCursor()</slot>
+  <slot>resetCursor()</slot>
+  <slot>setRotateCursor()</slot>
+  <slot>fragLoader()</slot>
+  <slot>vertLoader()</slot>
+  <slot>mtlLoader()</slot>
+  <slot>startSave()</slot>
+  <slot>openColor()</slot>
+ </slots>
+</ui>
