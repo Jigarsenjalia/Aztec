@@ -1,0 +1,586 @@
+\hypertarget{class_mesh}{\section{Mesh Class Reference}
+\label{class_mesh}\index{Mesh@{Mesh}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_mesh_a606978911c751958f2d69e69fba6bd5b}{Mesh} (void)
+\item 
+\hyperlink{class_mesh_a5d57b290621dea7bae044a18beac008a}{$\sim$\-Mesh} (void)
+\item 
+void \hyperlink{class_mesh_a8526806ec2627c4549e893d25c510ec6}{add\-V} (\hyperlink{class_vertex}{Vertex} $\ast$)
+\item 
+void \hyperlink{class_mesh_ad041a376fca28a2fc9b123b25612eab3}{add\-H\-E} (\hyperlink{class_half_edge}{Half\-Edge} $\ast$)
+\item 
+void \hyperlink{class_mesh_a1db99b5513473178398014cb651d0cf7}{add\-F} (\hyperlink{class_face}{Face} $\ast$)
+\item 
+void \hyperlink{class_mesh_a8e901daf8b1fb9e1e44e04201eec9108}{delete\-V} (int)
+\item 
+void \hyperlink{class_mesh_a7998f2c7ab170cef82a533008859d199}{delete\-H\-E} (int)
+\item 
+void \hyperlink{class_mesh_a129e0e82375443c1a7078fb6b6d5f0ff}{delete\-F} (int)
+\item 
+int \hyperlink{class_mesh_a81a4f79aa38bf2856bcfe8175e3e12b2}{get\-V\-Size} (void)
+\item 
+int \hyperlink{class_mesh_a404be995ec077a8736756e33dfa37d05}{get\-H\-E\-Size} (void)
+\item 
+int \hyperlink{class_mesh_a9e038ec494afbaa538dde90e830d4a34}{get\-F\-Size} (void)
+\item 
+\hyperlink{class_vertex}{Vertex} $\ast$ \hyperlink{class_mesh_ab9d6bbe005e63f41f5693680487d36ca}{get\-V} (int)
+\item 
+\hyperlink{class_half_edge}{Half\-Edge} $\ast$ \hyperlink{class_mesh_aa6dd0f2b08b6917fb644c0971c8d8c67}{get\-H\-E} (int)
+\item 
+\hyperlink{class_face}{Face} $\ast$ \hyperlink{class_mesh_af2d12cb093c787e2c5713a299aa65efc}{get\-F} (int)
+\item 
+\hypertarget{class_mesh_a4791e94a7d5b1446c08109ac6d48a4ef}{\hyperlink{class_vertex}{Vertex} $\ast$ {\bfseries find\-V} (int)}\label{class_mesh_a4791e94a7d5b1446c08109ac6d48a4ef}
+
+\item 
+\hypertarget{class_mesh_ac82e9fb4db3496a7a96bac4cb413efc6}{\hyperlink{class_half_edge}{Half\-Edge} $\ast$ {\bfseries find\-H\-E} (int)}\label{class_mesh_ac82e9fb4db3496a7a96bac4cb413efc6}
+
+\item 
+\hypertarget{class_mesh_a2bdd7b3c36c4e2a0d41044c5607dad92}{\hyperlink{class_face}{Face} $\ast$ {\bfseries find\-F} (int)}\label{class_mesh_a2bdd7b3c36c4e2a0d41044c5607dad92}
+
+\item 
+\hyperlink{class_vertex}{Vertex} $\ast$ \hyperlink{class_mesh_ac41d81f62a5e2eda2382c617ee5799e3}{add\-Vertex} (\hyperlink{class_half_edge}{Half\-Edge} $\ast$)
+\item 
+char $\ast$ \hyperlink{class_mesh_af56427919d906c5e8f1ec2fbee349e18}{add\-Edge} (\hyperlink{class_face}{Face} $\ast$, \hyperlink{class_face}{Face} $\ast$, \hyperlink{class_half_edge}{Half\-Edge} $\ast$, \hyperlink{class_half_edge}{Half\-Edge} $\ast$)
+\item 
+char $\ast$ \hyperlink{class_mesh_a4ba8b584ee4da42b3c7bfe664bc4a4d0}{split\-Quad} (\hyperlink{class_face}{Face} $\ast$)
+\item 
+void \hyperlink{class_mesh_ae2b9608f157116831b2504caed3db841}{delete\-Vertex} (\hyperlink{class_half_edge}{Half\-Edge} $\ast$)
+\item 
+void \hyperlink{class_mesh_a538aa6c1eee9a26b2bae9007ad5c4559}{split\-Polygon} (\hyperlink{class_face}{Face} $\ast$, \hyperlink{class_half_edge}{Half\-Edge} $\ast$)
+\item 
+bool \hyperlink{class_mesh_ac70eaa218e7a870d23ee467e0df8a74e}{check\-For\-Edge\-Loop} (\hyperlink{class_half_edge}{Half\-Edge} $\ast$current)
+\item 
+void \hyperlink{class_mesh_ab889a89b9da7add88e75393e2eeca049}{order} ()
+\item 
+bool \hyperlink{class_mesh_a8471897ccd4647bc8c79bf8a0388b0de}{is\-Changed} ()
+\item 
+void \hyperlink{class_mesh_a4043c44812786af6618c2e3b3bb38187}{changed\-Finished} ()
+\item 
+void \hyperlink{class_mesh_abfd027aacf682a7443a5e62731041f59}{set\-Prev} ()
+\item 
+void \hyperlink{class_mesh_aac71d69ad87090293879832e52876345}{check\-Structure} ()
+\item 
+\hyperlink{class_vertex}{Vertex} \hyperlink{class_mesh_afc611783d2325ca3337ec4c2a9c60fe7}{average} (vector$<$ \hyperlink{class_vertex}{Vertex} $>$)
+\item 
+void \hyperlink{class_mesh_a56d19ef4c8338b4dad6958b511077d0a}{subdivide} ()
+\item 
+void \hyperlink{class_mesh_a5d5f113739ab8219b17076d9c1ead868}{add\-Edge\-Points} (\hyperlink{class_face}{Face} $\ast$)
+\item 
+void \hyperlink{class_mesh_a86225a4963264c09814ed3009a8daab9}{add\-Face\-Point} (\hyperlink{class_face}{Face} $\ast$, \hyperlink{class_half_edge}{Half\-Edge} $\ast$, int)
+\item 
+void \hyperlink{class_mesh_a8d42e4555e5006a15893ef7addc2961e}{move\-Orig\-Points} (int num\-Points)
+\item 
+\hypertarget{class_mesh_ad911d4d8242ca288ddcb6567813378f8}{void {\bfseries move\-Orig\-Points} (vector$<$ \hyperlink{class_half_edge}{Half\-Edge} $\ast$ $>$)}\label{class_mesh_ad911d4d8242ca288ddcb6567813378f8}
+
+\item 
+\hypertarget{class_mesh_a792ddf4b0f8f0f287110ba2b7b5286b3}{void {\bfseries make\-Extrusion} (\hyperlink{class_face}{Face} $\ast$)}\label{class_mesh_a792ddf4b0f8f0f287110ba2b7b5286b3}
+
+\item 
+void \hyperlink{class_mesh_a558cdb52944d5870355a3c9ffb05efc1}{extrude} (\hyperlink{class_face}{Face} $\ast$)
+\item 
+bool \hyperlink{class_mesh_a7de72f851dd5b657b9abace304bdd0d5}{insert\-Edge\-Loop} (\hyperlink{class_half_edge}{Half\-Edge} $\ast$)
+\item 
+\hypertarget{class_mesh_a40dfed0ce0628c66e7d914c8524605c7}{void {\bfseries poke} (\hyperlink{class_face}{Face} $\ast$)}\label{class_mesh_a40dfed0ce0628c66e7d914c8524605c7}
+
+\item 
+void \hyperlink{class_mesh_afc1b75d1d066e2364603167d113a3fe9}{translate} (\hyperlink{class_face}{Face} $\ast$, glm\-::vec3)
+\item 
+void \hyperlink{class_mesh_a59e2936a8989e2d80f7446a866ce363b}{scale} (\hyperlink{class_face}{Face} $\ast$, float)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_mesh_ae73d4154dac8c9cdabe4d03effb6e44d}{int {\bfseries vcount}}\label{class_mesh_ae73d4154dac8c9cdabe4d03effb6e44d}
+
+\item 
+\hypertarget{class_mesh_ad13489fe8fd7173e47134eda356accb3}{int {\bfseries ecount}}\label{class_mesh_ad13489fe8fd7173e47134eda356accb3}
+
+\item 
+\hypertarget{class_mesh_adceb1bebd5fd35bf64f7be51bc47abce}{int {\bfseries fcount}}\label{class_mesh_adceb1bebd5fd35bf64f7be51bc47abce}
+
+\item 
+\hypertarget{class_mesh_ac8f75c5314ba29d34fc2f3deab5364ad}{bool {\bfseries changed}}\label{class_mesh_ac8f75c5314ba29d34fc2f3deab5364ad}
+
+\item 
+\hypertarget{class_mesh_ad5c3cc8c9fddca210043ff59b5254549}{char $\ast$ {\bfseries mname}}\label{class_mesh_ad5c3cc8c9fddca210043ff59b5254549}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_mesh_a606978911c751958f2d69e69fba6bd5b}{\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\subsubsection[{Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh\-::\-Mesh} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a606978911c751958f2d69e69fba6bd5b}
+Constructor.
+
+Initializes all variables to 0. \hypertarget{class_mesh_a5d57b290621dea7bae044a18beac008a}{\index{Mesh@{Mesh}!$\sim$\-Mesh@{$\sim$\-Mesh}}
+\index{$\sim$\-Mesh@{$\sim$\-Mesh}!Mesh@{Mesh}}
+\subsubsection[{$\sim$\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mesh\-::$\sim$\-Mesh} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a5d57b290621dea7bae044a18beac008a}
+Destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_mesh_af56427919d906c5e8f1ec2fbee349e18}{\index{Mesh@{Mesh}!add\-Edge@{add\-Edge}}
+\index{add\-Edge@{add\-Edge}!Mesh@{Mesh}}
+\subsubsection[{add\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ {\bf Mesh\-::add\-Edge} (
+\begin{DoxyParamCaption}
+\item[{{\bf Face} $\ast$}]{fa, }
+\item[{{\bf Face} $\ast$}]{fb, }
+\item[{{\bf Half\-Edge} $\ast$}]{hea0, }
+\item[{{\bf Half\-Edge} $\ast$}]{heb0}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_af56427919d906c5e8f1ec2fbee349e18}
+Inserts an edge between two faces. The faces must share exactly 1 vertex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fa,fb} & -\/ the faces between which the new half edge will be inserted\\
+\hline
+{\em hea0,heb0} & -\/ the half edges determine where on the faces the new half edge will be inserted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An error message if the method fails. The empty string otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a5d5f113739ab8219b17076d9c1ead868}{\index{Mesh@{Mesh}!add\-Edge\-Points@{add\-Edge\-Points}}
+\index{add\-Edge\-Points@{add\-Edge\-Points}!Mesh@{Mesh}}
+\subsubsection[{add\-Edge\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::add\-Edge\-Points} (
+\begin{DoxyParamCaption}
+\item[{{\bf Face} $\ast$}]{f}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a5d5f113739ab8219b17076d9c1ead868}
+Helper method for subdivide that adds a midpoint between each edge of a face
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & -\/ the face to add the midpoints to \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_a1db99b5513473178398014cb651d0cf7}{\index{Mesh@{Mesh}!add\-F@{add\-F}}
+\index{add\-F@{add\-F}!Mesh@{Mesh}}
+\subsubsection[{add\-F}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::add\-F} (
+\begin{DoxyParamCaption}
+\item[{{\bf Face} $\ast$}]{f}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a1db99b5513473178398014cb651d0cf7}
+Adds a face to the mesh's list of faces.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & -\/ the face to be added to the mesh \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_a86225a4963264c09814ed3009a8daab9}{\index{Mesh@{Mesh}!add\-Face\-Point@{add\-Face\-Point}}
+\index{add\-Face\-Point@{add\-Face\-Point}!Mesh@{Mesh}}
+\subsubsection[{add\-Face\-Point}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::add\-Face\-Point} (
+\begin{DoxyParamCaption}
+\item[{{\bf Face} $\ast$}]{face, }
+\item[{{\bf Half\-Edge} $\ast$}]{start, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a86225a4963264c09814ed3009a8daab9}
+Helper method for subdivide that adds a centroid to each face
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & -\/ the face to add the centroid to \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_ad041a376fca28a2fc9b123b25612eab3}{\index{Mesh@{Mesh}!add\-H\-E@{add\-H\-E}}
+\index{add\-H\-E@{add\-H\-E}!Mesh@{Mesh}}
+\subsubsection[{add\-H\-E}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::add\-H\-E} (
+\begin{DoxyParamCaption}
+\item[{{\bf Half\-Edge} $\ast$}]{he}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_ad041a376fca28a2fc9b123b25612eab3}
+Adds a half edge to the mesh's list of half edges.
+
+
+\begin{DoxyParams}{Parameters}
+{\em he} & -\/ the half edge to be added to the mesh \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_a8526806ec2627c4549e893d25c510ec6}{\index{Mesh@{Mesh}!add\-V@{add\-V}}
+\index{add\-V@{add\-V}!Mesh@{Mesh}}
+\subsubsection[{add\-V}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::add\-V} (
+\begin{DoxyParamCaption}
+\item[{{\bf Vertex} $\ast$}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a8526806ec2627c4549e893d25c510ec6}
+Adds a vertex to the mesh's list of vertices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & -\/ the vertex to be added to the mesh \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_ac41d81f62a5e2eda2382c617ee5799e3}{\index{Mesh@{Mesh}!add\-Vertex@{add\-Vertex}}
+\index{add\-Vertex@{add\-Vertex}!Mesh@{Mesh}}
+\subsubsection[{add\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vertex} $\ast$ {\bf Mesh\-::add\-Vertex} (
+\begin{DoxyParamCaption}
+\item[{{\bf Half\-Edge} $\ast$}]{he0}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_ac41d81f62a5e2eda2382c617ee5799e3}
+Adds a vertex into an edge.
+
+
+\begin{DoxyParams}{Parameters}
+{\em he0} & -\/ the half edge whose next will have the next vertex inserted into it\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the inserted vertex 
+\end{DoxyReturn}
+\hypertarget{class_mesh_afc611783d2325ca3337ec4c2a9c60fe7}{\index{Mesh@{Mesh}!average@{average}}
+\index{average@{average}!Mesh@{Mesh}}
+\subsubsection[{average}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vertex} {\bf Mesh\-::average} (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Vertex} $>$}]{verts}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_afc611783d2325ca3337ec4c2a9c60fe7}
+Averages a list of vertices into one vertex
+
+
+\begin{DoxyParams}{Parameters}
+{\em verts} & -\/ the list of vertices to be averaged\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vertex whose coordinates are the average of the vertices in the list 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a4043c44812786af6618c2e3b3bb38187}{\index{Mesh@{Mesh}!changed\-Finished@{changed\-Finished}}
+\index{changed\-Finished@{changed\-Finished}!Mesh@{Mesh}}
+\subsubsection[{changed\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::changed\-Finished} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a4043c44812786af6618c2e3b3bb38187}
+Tells the mesh that the client has processed previous changes. \hypertarget{class_mesh_ac70eaa218e7a870d23ee467e0df8a74e}{\index{Mesh@{Mesh}!check\-For\-Edge\-Loop@{check\-For\-Edge\-Loop}}
+\index{check\-For\-Edge\-Loop@{check\-For\-Edge\-Loop}!Mesh@{Mesh}}
+\subsubsection[{check\-For\-Edge\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Mesh\-::check\-For\-Edge\-Loop} (
+\begin{DoxyParamCaption}
+\item[{{\bf Half\-Edge} $\ast$}]{current}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_ac70eaa218e7a870d23ee467e0df8a74e}
+Helper for edge\-Loop that checks that every face that would have a loop inserted into them is a quad
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & -\/ the edge at which to start checking\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the face is a quad, false otherwise 
+\end{DoxyReturn}
+\hypertarget{class_mesh_aac71d69ad87090293879832e52876345}{\index{Mesh@{Mesh}!check\-Structure@{check\-Structure}}
+\index{check\-Structure@{check\-Structure}!Mesh@{Mesh}}
+\subsubsection[{check\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::check\-Structure} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_aac71d69ad87090293879832e52876345}
+Checks the structure of the mesh, printing any errors \hypertarget{class_mesh_a129e0e82375443c1a7078fb6b6d5f0ff}{\index{Mesh@{Mesh}!delete\-F@{delete\-F}}
+\index{delete\-F@{delete\-F}!Mesh@{Mesh}}
+\subsubsection[{delete\-F}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::delete\-F} (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a129e0e82375443c1a7078fb6b6d5f0ff}
+Removes a face from the mesh's list of faces.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & -\/ the num of the vertex to be deleted \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_a7998f2c7ab170cef82a533008859d199}{\index{Mesh@{Mesh}!delete\-H\-E@{delete\-H\-E}}
+\index{delete\-H\-E@{delete\-H\-E}!Mesh@{Mesh}}
+\subsubsection[{delete\-H\-E}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::delete\-H\-E} (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a7998f2c7ab170cef82a533008859d199}
+Removes a half edge from the mesh's list of half edges.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & -\/ the num of the vertex to be deleted \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_a8e901daf8b1fb9e1e44e04201eec9108}{\index{Mesh@{Mesh}!delete\-V@{delete\-V}}
+\index{delete\-V@{delete\-V}!Mesh@{Mesh}}
+\subsubsection[{delete\-V}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::delete\-V} (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a8e901daf8b1fb9e1e44e04201eec9108}
+Removes a vertex from the mesh's list of vertices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & -\/ the num of the vertex to be deleted \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_ae2b9608f157116831b2504caed3db841}{\index{Mesh@{Mesh}!delete\-Vertex@{delete\-Vertex}}
+\index{delete\-Vertex@{delete\-Vertex}!Mesh@{Mesh}}
+\subsubsection[{delete\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::delete\-Vertex} (
+\begin{DoxyParamCaption}
+\item[{{\bf Half\-Edge} $\ast$}]{he0}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_ae2b9608f157116831b2504caed3db841}
+Deletes a vertex from the mesh's structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em he0} & -\/ the half edge that points to the vertex to be deleted \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_a558cdb52944d5870355a3c9ffb05efc1}{\index{Mesh@{Mesh}!extrude@{extrude}}
+\index{extrude@{extrude}!Mesh@{Mesh}}
+\subsubsection[{extrude}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::extrude} (
+\begin{DoxyParamCaption}
+\item[{{\bf Face} $\ast$}]{f}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a558cdb52944d5870355a3c9ffb05efc1}
+Extrudes a face.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & -\/ the face to extrude \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_af2d12cb093c787e2c5713a299aa65efc}{\index{Mesh@{Mesh}!get\-F@{get\-F}}
+\index{get\-F@{get\-F}!Mesh@{Mesh}}
+\subsubsection[{get\-F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Face} $\ast$ {\bf Mesh\-::get\-F} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_af2d12cb093c787e2c5713a299aa65efc}
+Gets a face from the mesh
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ The integer identifier for a face.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The face with that identifier 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a9e038ec494afbaa538dde90e830d4a34}{\index{Mesh@{Mesh}!get\-F\-Size@{get\-F\-Size}}
+\index{get\-F\-Size@{get\-F\-Size}!Mesh@{Mesh}}
+\subsubsection[{get\-F\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Mesh\-::get\-F\-Size} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a9e038ec494afbaa538dde90e830d4a34}
+Return the number of faces in the mesh
+
+\begin{DoxyReturn}{Returns}
+The number of faces in the mesh 
+\end{DoxyReturn}
+\hypertarget{class_mesh_aa6dd0f2b08b6917fb644c0971c8d8c67}{\index{Mesh@{Mesh}!get\-H\-E@{get\-H\-E}}
+\index{get\-H\-E@{get\-H\-E}!Mesh@{Mesh}}
+\subsubsection[{get\-H\-E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Half\-Edge} $\ast$ {\bf Mesh\-::get\-H\-E} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_aa6dd0f2b08b6917fb644c0971c8d8c67}
+Gets a half edge from the mesh
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ The integer identifier for a half edge.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The half edge with that identifier 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a404be995ec077a8736756e33dfa37d05}{\index{Mesh@{Mesh}!get\-H\-E\-Size@{get\-H\-E\-Size}}
+\index{get\-H\-E\-Size@{get\-H\-E\-Size}!Mesh@{Mesh}}
+\subsubsection[{get\-H\-E\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Mesh\-::get\-H\-E\-Size} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a404be995ec077a8736756e33dfa37d05}
+Return the number of half edges in the mesh
+
+\begin{DoxyReturn}{Returns}
+The number of half edges in the mesh 
+\end{DoxyReturn}
+\hypertarget{class_mesh_ab9d6bbe005e63f41f5693680487d36ca}{\index{Mesh@{Mesh}!get\-V@{get\-V}}
+\index{get\-V@{get\-V}!Mesh@{Mesh}}
+\subsubsection[{get\-V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vertex} $\ast$ {\bf Mesh\-::get\-V} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_ab9d6bbe005e63f41f5693680487d36ca}
+Gets a vertex from the mesh
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ The integer identifier for a vertex.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vertex with that identifier 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a81a4f79aa38bf2856bcfe8175e3e12b2}{\index{Mesh@{Mesh}!get\-V\-Size@{get\-V\-Size}}
+\index{get\-V\-Size@{get\-V\-Size}!Mesh@{Mesh}}
+\subsubsection[{get\-V\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Mesh\-::get\-V\-Size} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a81a4f79aa38bf2856bcfe8175e3e12b2}
+Return the number of vertices in the mesh
+
+\begin{DoxyReturn}{Returns}
+The number of vertices in the mesh 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a7de72f851dd5b657b9abace304bdd0d5}{\index{Mesh@{Mesh}!insert\-Edge\-Loop@{insert\-Edge\-Loop}}
+\index{insert\-Edge\-Loop@{insert\-Edge\-Loop}!Mesh@{Mesh}}
+\subsubsection[{insert\-Edge\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Mesh\-::insert\-Edge\-Loop} (
+\begin{DoxyParamCaption}
+\item[{{\bf Half\-Edge} $\ast$}]{current}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a7de72f851dd5b657b9abace304bdd0d5}
+Inserts an edge loop. Will only succeed if it does not encounter any triangles
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & -\/ the edge to start the edge loop at\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the method can be completed, false otherwise 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a8471897ccd4647bc8c79bf8a0388b0de}{\index{Mesh@{Mesh}!is\-Changed@{is\-Changed}}
+\index{is\-Changed@{is\-Changed}!Mesh@{Mesh}}
+\subsubsection[{is\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Mesh\-::is\-Changed} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a8471897ccd4647bc8c79bf8a0388b0de}
+Indicates whether the mesh's structure has changed.
+
+\begin{DoxyReturn}{Returns}
+true if the mesh's structure has changed, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a8d42e4555e5006a15893ef7addc2961e}{\index{Mesh@{Mesh}!move\-Orig\-Points@{move\-Orig\-Points}}
+\index{move\-Orig\-Points@{move\-Orig\-Points}!Mesh@{Mesh}}
+\subsubsection[{move\-Orig\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::move\-Orig\-Points} (
+\begin{DoxyParamCaption}
+\item[{int}]{num\-Points}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a8d42e4555e5006a15893ef7addc2961e}
+Helper method for subdivide that moves the original points of a mesh
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\-Points} & -\/ the maximum number of points to move \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_ab889a89b9da7add88e75393e2eeca049}{\index{Mesh@{Mesh}!order@{order}}
+\index{order@{order}!Mesh@{Mesh}}
+\subsubsection[{order}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::order} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_ab889a89b9da7add88e75393e2eeca049}
+Orders the mesh's vertices, faces, and half edges \hypertarget{class_mesh_a59e2936a8989e2d80f7446a866ce363b}{\index{Mesh@{Mesh}!scale@{scale}}
+\index{scale@{scale}!Mesh@{Mesh}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::scale} (
+\begin{DoxyParamCaption}
+\item[{{\bf Face} $\ast$}]{f, }
+\item[{float}]{factor}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a59e2936a8989e2d80f7446a866ce363b}
+Scales a face
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & -\/ the face to be scaled\\
+\hline
+{\em factor} & -\/ the amount to scale \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_abfd027aacf682a7443a5e62731041f59}{\index{Mesh@{Mesh}!set\-Prev@{set\-Prev}}
+\index{set\-Prev@{set\-Prev}!Mesh@{Mesh}}
+\subsubsection[{set\-Prev}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::set\-Prev} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_abfd027aacf682a7443a5e62731041f59}
+Set the previous pointer of the mesh \hypertarget{class_mesh_a538aa6c1eee9a26b2bae9007ad5c4559}{\index{Mesh@{Mesh}!split\-Polygon@{split\-Polygon}}
+\index{split\-Polygon@{split\-Polygon}!Mesh@{Mesh}}
+\subsubsection[{split\-Polygon}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::split\-Polygon} (
+\begin{DoxyParamCaption}
+\item[{{\bf Face} $\ast$}]{f1, }
+\item[{{\bf Half\-Edge} $\ast$}]{he1}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a538aa6c1eee9a26b2bae9007ad5c4559}
+Splits a generic polygon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f1} & -\/ the face to be split\\
+\hline
+{\em he1} & -\/ T\-O\-D\-O \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mesh_a4ba8b584ee4da42b3c7bfe664bc4a4d0}{\index{Mesh@{Mesh}!split\-Quad@{split\-Quad}}
+\index{split\-Quad@{split\-Quad}!Mesh@{Mesh}}
+\subsubsection[{split\-Quad}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ {\bf Mesh\-::split\-Quad} (
+\begin{DoxyParamCaption}
+\item[{{\bf Face} $\ast$}]{f1}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a4ba8b584ee4da42b3c7bfe664bc4a4d0}
+Splits a quad into two triangles. Fails if the face is not a quad.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f1} & -\/ the face to be split\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An error message if the method fails. The empty string otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_mesh_a56d19ef4c8338b4dad6958b511077d0a}{\index{Mesh@{Mesh}!subdivide@{subdivide}}
+\index{subdivide@{subdivide}!Mesh@{Mesh}}
+\subsubsection[{subdivide}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::subdivide} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_a56d19ef4c8338b4dad6958b511077d0a}
+Smooths a mesh through the Catmull-\/\-Clark subdivision algorithm \hypertarget{class_mesh_afc1b75d1d066e2364603167d113a3fe9}{\index{Mesh@{Mesh}!translate@{translate}}
+\index{translate@{translate}!Mesh@{Mesh}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Mesh\-::translate} (
+\begin{DoxyParamCaption}
+\item[{{\bf Face} $\ast$}]{f, }
+\item[{glm\-::vec3}]{dir}
+\end{DoxyParamCaption}
+)}}\label{class_mesh_afc1b75d1d066e2364603167d113a3fe9}
+Translates a face
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & -\/ the face to be translated\\
+\hline
+{\em dir} & -\/ the direction to translate \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Mesh.\-h\item 
+mesh.\-cpp\end{DoxyCompactItemize}
